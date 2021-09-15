@@ -7,7 +7,7 @@ let frames = {
   punch: [1, 2, 3, 4, 5, 6, 7],
   backward: [1, 2, 3, 4, 5, 6],
   forward: [1, 2, 3, 4, 5, 6],
-  block: [1, 2, 3, 4, 5, 6],
+  
 };
 
 let loadImage = (src, callback) => {
@@ -27,7 +27,7 @@ let loadImages = (callback) => {
     punch: [],
     backward: [],
     forward: [],
-    block: [],
+    
   };
   let imagesToLoad = 0;
   let action = Object.keys(images);
@@ -85,9 +85,7 @@ loadImages((images) => {
     queuedAnimation.push("backward");
   };
 
-  document.getElementById("block").onclick = () => {
-    queuedAnimation.push("block");
-  };
+ 
 
   document.addEventListener("keyup", (event) => {
     const key = event.key;
@@ -98,8 +96,6 @@ loadImages((images) => {
       queuedAnimation.push("forward");
     } else if (key === "ArrowLeft") {
       queuedAnimation.push("backward");
-    } else if (key === " ") {
-      queuedAnimation.push("block");
     }
   });
 
