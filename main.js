@@ -3,7 +3,7 @@ let ctx = canvas.getContext("2d");
 
 let frames = {
   idle: [1, 2, 3, 4, 5, 6, 7, 8],
-  kick: [1, 2, 3, 4, 5, 6, 7],
+  
   punch: [1, 2, 3, 4, 5, 6, 7],
   backward: [1, 2, 3, 4, 5, 6],
   forward: [1, 2, 3, 4, 5, 6],
@@ -23,7 +23,7 @@ let imagePath = (frameNumber, animation) => {
 let loadImages = (callback) => {
   let images = {
     idle: [],
-    kick: [],
+   
     punch: [],
     backward: [],
     forward: [],
@@ -72,10 +72,7 @@ loadImages((images) => {
     animate(ctx, images, selectedAnimation, aux);
   };
 
-  document.getElementById("kick").onclick = () => {
-    queuedAnimation.push("kick");
-  };
-
+  
   document.getElementById("punch").onclick = () => {
     queuedAnimation.push("punch");
   };
@@ -95,9 +92,7 @@ loadImages((images) => {
   document.addEventListener("keyup", (event) => {
     const key = event.key;
 
-    if (key === "ArrowUp") {
-      queuedAnimation.push("kick");
-    } else if (key === "ArrowDown") {
+    if (key === "ArrowDown") {
       queuedAnimation.push("punch");
     } else if (key === "ArrowRight") {
       queuedAnimation.push("forward");
